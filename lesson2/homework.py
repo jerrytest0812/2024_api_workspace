@@ -7,12 +7,6 @@
 try:
     height = float(input('請輸入身高(cm):'))
     print(f'身高:{height}')
-except ValueError:
-    print('請輸入數字')
-except Exception:
-    # Exeption 包含所有錯誤, 寫在最後的except
-    print('發生錯誤')
-try:
     weight = float(input('請輸入體重:'))
     print(f'體重:{weight}')
 except ValueError:
