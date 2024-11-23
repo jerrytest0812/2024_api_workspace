@@ -1,18 +1,5 @@
-def get_status(bmi:float) -> str:
-    print(f'BMI={bmi}')
-    if bmi < 18.5:
-        status = '過輕'
-    elif bmi < 24 :
-        status = '正常'
-    elif bmi < 27 :
-        status = '過重'
-    elif bmi < 30:
-        status = '輕度肥胖'
-    elif bmi < 35:
-        status = '中度肥胖'
-    else:
-        status = '重度肥胖'
-    return status
+import tools
+
 def main():
     while True:
         try:
@@ -24,7 +11,7 @@ def main():
             print('發生錯誤')
         else:
             bmi = weight / (height/100)**2
-            status = get_status(bmi)
+            status = tools.get_status(bmi)
             print(f'體重狀態{status}')
             break
     print('程式結束')
