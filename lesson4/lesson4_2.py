@@ -1,4 +1,4 @@
-import tools
+import widget
 
 def main():
     while True:
@@ -11,7 +11,7 @@ def main():
             print('發生錯誤')
         else:
             bmi = weight / (height/100)**2
-            status = tools.get_status(bmi)
+            status = widget.get_status(bmi)
             print(f'體重狀態{status}')
             break
     print('程式結束')
