@@ -1,20 +1,22 @@
-PI = 3.1415926
+class Person:
+    def __init__(self,name:str,age:int):
+        self.name = name
+        self.age = age
+    
+    def echo(self):
+        print(f'name:{self.name}')
+        print(f'age:{self.age}')
 
-class person:
-    pass
 
-def get_status(bmi:float) -> str:
-    print(f'BMI={bmi}')
-    if bmi < 18.5:
-        status = '過輕'
-    elif bmi < 24 :
-        status = '正常'
-    elif bmi < 27 :
-        status = '過重'
-    elif bmi < 30:
-        status = '輕度肥胖'
-    elif bmi < 35:
-        status = '中度肥胖'
-    else:
-        status = '重度肥胖'
-    return status
+class Student(Person):
+    def __init__(self,name:str, age:int, score:int):
+        super().__init__(name=name, age=age)
+        self.__score = score
+
+    @property
+    def score(self)->int:
+        return self.__score
+    
+    def echo(self):
+        super().echo()
+        print(f'score:{self.score}')
