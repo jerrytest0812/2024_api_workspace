@@ -3,14 +3,8 @@ import tools
 
 
 def main():
-    data:list[dict] = tools.get_aqi('aqi.xlsx')
-    sitenames:list = []
-    for item in data:
-        sitenames.append(item['sitename'])
-    sitenames=list(set(sitenames))
-    print(len(sitenames))
-    for name in list(set(sitenames)):
-        print(name)
+   sitenames = tools.get_sitenames('aqi.xlsx')
+   print(sitenames)
 
 
 if __name__ == '__main__':
