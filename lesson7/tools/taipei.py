@@ -10,10 +10,10 @@ def get_youbikes()->list[dict]:
     try:
         r: Response = requests.request('GET',url)
         r.raise_for_status()
-    except HTTPError as e:
+    except HTTPError as e :
         raise Exception("Server Error")
-    except RequestException as e:
-        return Exception("Connection Error")
+    except RequestException as e :
+        raise Exception("Connection Error")
     else:
         print('Success')
 
