@@ -11,9 +11,9 @@ def get_youbiles()->list[dict]:
         r: Response = requests.request('GET',url)
         r.raise_for_status()
     except HTTPError as e:
-        print(e)
+        raise Exception("Server Error")
     except RequestException as e:
-        print(e)
+        return Exception("Connection Error")
     else:
         print('Success')
 
