@@ -13,4 +13,4 @@ except Exception as e:
     st.write("稍後再試")
     st.stop()
 
-st.write(youbike_data)
+st.table(youbike_data)
