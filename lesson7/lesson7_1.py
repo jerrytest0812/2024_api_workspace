@@ -1,5 +1,6 @@
 import requests
 from requests import Response
+from requests.exceptions import RequestException , HTTPError
 from io import StringIO
 from csv import DictReader
 url = 'https://data.ntpc.gov.tw/api/datasets/010e5b15-3823-4b20-b401-b1cf000550c5/csv?page=0&size=1000'
