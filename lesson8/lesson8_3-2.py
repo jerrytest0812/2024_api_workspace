@@ -23,19 +23,17 @@ with col2:
             "可借車輛數":item['sbi'],
             "可還車輛數":item['bemp'],
             "營業中":item['act'],
-            "latitute":item['lat'],
-            "longitude":item['lng']
+            "latitude":float(item['lat']),
+            "longitude":float(item['lng'])
             } for item in filter_list]
     st.dataframe(show_data,width=800)
 
+    # 生成該行政區站點資訊地圖於下方
+
+    st.map(show_data,latitude='latitude',longitude='longitude')
 
 
-# with col1:
-#     selected_sarea = st.selectbox("行政區域",sarea_list)
 
-# with col2:
-#     filter_data = filter(lambda item:item['sarea'] == selected_sarea,youbike_data)
-#     st.dataframe(filter_data)
 
 # #顯示地圖
 # filter_data = list(filter(lambda item:item['sarea'] == selected_sarea,youbike_data))
