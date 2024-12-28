@@ -21,6 +21,7 @@ def load_and_use_tflite(tflite_mode_path):
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
     
+    # Closure function to predict using the TFLite model
     def predict(input_data):
          # Prepare input data
         input_data = np.array(input_data, dtype=np.float32).reshape(input_details[0]['shape'])
@@ -39,7 +40,7 @@ def load_and_use_tflite(tflite_mode_path):
     return predict
 
 
-st.title('一元一次方程式')
+st.title('二元一次方程式')
 st.title('Y = 2X - 1 ')
 
 prompt = st.chat_input('請輸入X值:')
